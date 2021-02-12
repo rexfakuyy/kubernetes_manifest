@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+          refactory-pingpongapp:
+                            container_name: reckyrefactory_pingpong
+                            image: reckyprmn/pingpongapp-yarn:latest
+                            stdin_open: true
+                            ports:
+                                - 80:3000

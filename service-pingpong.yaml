@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pingpongapp
+  labels:
+    name: pingpong
+spec:
+    containers:
+      - name: pingpongapp
+        image: reckyprmn/refactorypingpong
+        ports:
+          - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pingpongapp-service
+spec:
+  selector:
+    name: pingpong
+  ports:
+    - port: 80
+      targetPort: 3000
